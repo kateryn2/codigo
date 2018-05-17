@@ -1,6 +1,7 @@
 package com.empresa.demo.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,6 +44,14 @@ this.libroService.save(libro);
 	return new RespuestaRest(HttpStatus.OK.value(), "Operación exitosa");
 	
 	 }
+	 
+	 @RequestMapping(value="/getLibro", method= RequestMethod.GET)
+	 public List<Libro> getLibro(){
+		return this.libroService.finAll();
+		 
+	 }
+	 
+	 
 	 
 	 private boolean validar (Libro libro) {
 	 boolean esValido = true;

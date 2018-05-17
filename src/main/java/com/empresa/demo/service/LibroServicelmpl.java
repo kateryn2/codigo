@@ -26,4 +26,12 @@ public class LibroServicelmpl implements LibroService {
 	return this.repositorioLibro.findAll();
 			
 	}
+
+	@Override
+	public void deleteLibro(Long id) {
+		this.repositorioLibro.deleteById(id);
+		
+	}
+
+	
 }

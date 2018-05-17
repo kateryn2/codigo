@@ -51,6 +51,20 @@ this.libroService.save(libro);
 		 
 	 }
 	 
+	 @RequestMapping(value= "/DeleteLibro", method= RequestMethod.POST)
+	 public void borrarLibro (@RequestBody String libroJson) throws Exception {
+		
+ this.mapper=new ObjectMapper();
+		 
+		 //se convierte json en un objeto
+	Libro libro =this.mapper.readValue(libroJson, Libro.class);
+	
+	if (libro.getId() == null){
+		throw new Exception("El id el nulo");
+	 }
+	this.libroService.deleteLibro(libro.getId());
+ }
+	 
 	 
 	 
 	 private boolean validar (Libro libro) {

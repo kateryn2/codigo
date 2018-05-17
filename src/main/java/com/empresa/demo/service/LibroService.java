@@ -20,5 +20,12 @@ public interface LibroService {
 	List<Libro> finAll();
 
 	
+	/**
+	 * Elimina un usu con el id
+	 * @param id
+	 */
+	void deleteLibro(Long id);
+
+	
 
 }

@@ -16,9 +16,7 @@ public class RespuestaRest {
 		this.mensaje =mensaje;
 	}
 	
-	
 	public Integer getRespuestaCode() {
-		
 		return respuestaCode;
 	}
 	

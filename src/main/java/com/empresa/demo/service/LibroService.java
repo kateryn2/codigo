@@ -6,11 +6,11 @@ import com.empresa.demo.model.Libro;
 
 public interface LibroService {
 	
-/**
- * Guarda un libro
- * @param libro
- * @return Libro guardado
- */
+	/**
+	 * Guarda un libro
+	 * @param libro
+	 * @return Libro guardado
+	 */
 	Libro save(Libro libro);
 
 	/**
@@ -19,9 +19,8 @@ public interface LibroService {
 	 */
 	List<Libro> finAll();
 
-	
 	/**
-	 * Elimina un usu con el id
+	 * Elimina un usuario con el identificador
 	 * @param id
 	 */
 	void deleteLibro(Long id);

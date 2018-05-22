@@ -32,14 +32,13 @@ public class LibroController {
 	  this.mapper=new ObjectMapper();
 		 
 		 //se convierte json en un objeto
-	Libro libro =this.mapper.readValue(libroJson, Libro.class);
+	 Libro libro =this.mapper.readValue(libroJson, Libro.class);
 		
 	if(!this.validar(libro)) {
-		return new RespuestaRest(HttpStatus.NOT_ACCEPTABLE.value(),
-				"Los campos obligatorios no se introducieron");
+    return new RespuestaRest(HttpStatus.NOT_ACCEPTABLE.value(),"Los campos obligatorios no se introducieron");
 	}
 	
-this.libroService.save(libro);
+     this.libroService.save(libro);
 
 	return new RespuestaRest(HttpStatus.OK.value(), "Operación exitosa");
 	
@@ -47,6 +46,7 @@ this.libroService.save(libro);
 	 
 	 @RequestMapping(value="/getLibro", method= RequestMethod.GET)
 	 public List<Libro> getLibro(){
+		 
 		return this.libroService.finAll();
 		 
 	 }
@@ -54,7 +54,7 @@ this.libroService.save(libro);
 	 @RequestMapping(value= "/DeleteLibro", method= RequestMethod.POST)
 	 public void borrarLibro (@RequestBody String libroJson) throws Exception {
 		
- this.mapper=new ObjectMapper();
+    this.mapper=new ObjectMapper();
 		 
 		 //se convierte json en un objeto
 	Libro libro =this.mapper.readValue(libroJson, Libro.class);
@@ -62,6 +62,7 @@ this.libroService.save(libro);
 	if (libro.getId() == null){
 		throw new Exception("El id el nulo");
 	 }
+	
 	this.libroService.deleteLibro(libro.getId());
  }
 	 

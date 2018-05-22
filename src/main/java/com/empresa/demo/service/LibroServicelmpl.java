@@ -13,23 +13,22 @@ import com.empresa.demo.model.Libro;
 public class LibroServicelmpl implements LibroService {
 
 	@Autowired
-	 protected RepositorioLibro repositorioLibro;
+	protected RepositorioLibro repositorioLibro;
 
 	@Override
 	public Libro save(Libro libro) {
-	
-		return this.repositorioLibro.save(libro);
+	   return this.repositorioLibro.save(libro);
 	}
 
 	@Override
 	public List<Libro> finAll() {	
-	return this.repositorioLibro.findAll();
+	   return this.repositorioLibro.findAll();
 			
 	}
 
 	@Override
 	public void deleteLibro(Long id) {
-		this.repositorioLibro.deleteById(id);
+	   this.repositorioLibro.deleteById(id);
 		
 	}
 
